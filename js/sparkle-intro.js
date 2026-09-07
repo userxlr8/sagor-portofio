@@ -16,6 +16,10 @@
 
   if (!canvas || !introSection) return;
 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   const ctx = canvas.getContext('2d');
   let width, height, dpr;
   let animationFrameId;
@@ -408,6 +412,7 @@
 
   // Initialization
   function init() {
+    window.scrollTo(0, 0);
     resize();
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
     const introHeight = introSection.offsetHeight || window.innerHeight;
@@ -419,16 +424,6 @@
 
     // Run the word-by-word written animation
     runWordByWordAnimation();
-
-    // If page is loaded with a hash anchor other than #antigravityIntro or #hero, allow native jump
-    if (window.location.hash && window.location.hash !== '#antigravityIntro' && window.location.hash !== '#hero') {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
-      }
-    }
   }
 
   if (document.readyState === 'loading') {
