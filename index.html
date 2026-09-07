@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sagor Sharif | Robotics Enthusiast, Competitive Programmer & Full-Stack Developer</title>
+  
+  <!-- SEO & Social Metadata -->
+  <meta name="description" content="Portfolio of Sagor Sharif — BSc in CSE student at University of Global Village (UGV), Barishal, Bangladesh. Specializing in robotics, embedded systems (Arduino, IoT, sensors), competitive programming, and modern full-stack web applications.">
+  <meta name="author" content="Sagor Sharif">
+  <meta name="keywords" content="Sagor Sharif, Robotics, Embedded Systems, Arduino, IoT, Competitive Programming, C++, Next.js, React, Supabase, Barishal, Bangladesh">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sagor Sharif | Robotics Enthusiast, Competitive Programmer & Developer">
+  <meta property="og:description" content="I build things that move, think, connect, and solve real problems. From code to circuits.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/sand-hourglass.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/sagor-logo.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Global Google Antigravity Background Canvas (Stardust & Confetti) -->
+  <canvas id="antigravityBgCanvas" class="antigravity-bg-canvas"></canvas>
+
+  <!-- Interactive Tap/Click Spark Burst Overlay Canvas -->
+  <canvas id="sparkBurstCanvas" class="spark-burst-canvas"></canvas>
+
+  <!-- ========================================================================
+       0. GOOGLE ANTIGRAVITY SPARKLE INTRO SECTION
+       ======================================================================== -->
+  <section class="antigravity-intro" id="antigravityIntro">
+    <canvas id="sparkleCanvas" class="sparkle-canvas"></canvas>
+    
+    <!-- Top Minimal Bar -->
+    <div class="intro-topbar">
+      <div class="intro-brand">
+        <div class="brand-logo-wrap" style="width: 38px; height: 38px;">
+          <img src="assets/images/sagor-logo.jpg" alt="Sagor Sharif Logo" class="brand-logo-img">
+        </div>
+        <span class="intro-brand-name">Sagor Sharif</span>
+      </div>
+      <div class="intro-top-actions">
+        <a href="#contact" class="btn-intro-contact">Let's Connect</a>
+      </div>
+    </div>
+
+    <!-- Center Hero Content -->
+    <div class="intro-center-content">
+      <h1 class="intro-headline" id="introHeadline" aria-label="Hello, I'm Sagor">
+        <span class="intro-word">Hello,</span>
+        <span class="intro-word">I'm</span>
+        <span class="intro-word intro-name-highlight">Sagor</span>
+        <span class="intro-cursor" id="introCursor" aria-hidden="true"></span>
+      </h1>
+
+      <p class="intro-subtitle">
+        Robotics Engineer · Competitive Programmer · Systems Builder
+      </p>
+
+      <div class="intro-ctas">
+        <a href="#hero" class="btn-intro-primary" id="introExploreBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Explore Portfolio
+        </a>
+        <a href="#projects" class="btn-intro-secondary">
+          View Case Studies
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Scroll Indicator -->
+    <div class="intro-scroll-hint" id="introScrollHint">
+      <div class="mouse-scroll-indicator">
+        <div class="mouse-wheel-dot"></div>
+      </div>
+      <span>Scroll to discover</span>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       1. NAVIGATION BAR
+       ======================================================================== -->
+  <header class="navbar navbar-hidden-intro" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Sagor Sharif Home">
+        <div class="brand-logo-wrap">
+          <img src="assets/images/sagor-logo.jpg" alt="Sagor Sharif Tech Logo" class="brand-logo-img">
+        </div>
+        <span>Sagor Sharif</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#hourglass-sim" class="nav-link">LED Sand Demo</a></li>
+          <li><a href="#skills" class="nav-link">Toolkit</a></li>
+          <li><a href="#contests" class="nav-link">Competitions</a></li>
+          <li><a href="#mentoring" class="nav-link">Mentoring</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Let's Connect</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#hourglass-sim" class="mobile-link">LED Sand Simulation</a>
+      <a href="#skills" class="mobile-link">Technical Toolkit</a>
+      <a href="#contests" class="mobile-link">Competitions & Awards</a>
+      <a href="#mentoring" class="mobile-link">Training & Leadership</a>
+      <a href="#about" class="mobile-link">About & Education</a>
+      <a href="#contact" class="mobile-link">Contact & Inquiries</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+    <div class="container hero-container">
+      <div class="hero-content-wrapper">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            CSE Student · Robotics & Software Developer
+          </div>
+
+          <h1 class="hero-title">
+            I build things that <span class="glow">move, think, connect,</span> and solve real problems.
+          </h1>
+
+          <p class="hero-subtitle">
+            Computer Science & Engineering student at University of Global Village (UGV), Barishal. Merging the power of algorithmic problem solving, embedded robotics, and modern full-stack web software.
+          </p>
+
+          <div class="hero-tags">
+            <span class="hero-tag">Robotics</span>
+            <span class="hero-tag">Embedded C++</span>
+            <span class="hero-tag">Arduino</span>
+            <span class="hero-tag">Competitive Programming</span>
+            <span class="hero-tag">Next.js & React</span>
+            <span class="hero-tag">IoT & Sensors</span>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Explore My Work
+            </a>
+            <a href="https://github.com/Sagor-Sharif" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub Profile
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-avatar-card">
+            <div class="avatar-frame">
+              <img src="assets/images/sagor-avatar.jpg" alt="Sagor Sharif Portrait" width="440" height="440">
+            </div>
+            <div class="avatar-floating-badge">
+              <div class="floating-badge-text">
+                <div class="floating-badge-title">Sagor Sharif</div>
+                <div class="floating-badge-sub">University of Global Village (UGV)</div>
+              </div>
+              <span class="badge badge-cyan">Barishal, BD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <div>
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Hardware & IoT Builds</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <div>
+            <div class="stat-num">2x</div>
+            <div class="stat-label">Contest Champion (IUPC)</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="stat-num">Gold★</div>
+            <div class="stat-label">HackerRank C++ Badge</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Students Mentored (STEM)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. INTERACTIVE HARDWARE SIMULATION: DIGITAL SAND HOURGLASS
+       ======================================================================== -->
+  <section class="section sand-widget-section" id="hourglass-sim">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Interactive Hardware Simulation
+        </div>
+        <h2 class="section-title">Experience the <span class="gradient-text">Digital Sand Hourglass</span></h2>
+        <p class="section-desc">
+          Try the real-time falling sand cellular automaton in your browser. This simulation recreates the physics running on dual 8×8 RGB LED matrices controlled by an Arduino and MPU6050 accelerometer.
+        </p>
+      </div>
+
+      <div class="glass-panel simulation-card">
+        <div class="sim-info">
+          <h3>Physics-Driven Sand on Dual 8×8 LED Displays</h3>
+          <p>
+            Rather than a static countdown, this embedded project models each grain of sand as a discrete physical cell. Grains slide diagonally, form authentic heap pyramids, and tumble through the central bottleneck.
+          </p>
+
+          <ul class="sim-specs-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Dual 8×8 RGB Matrix (128 total LED nodes)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              MPU6050 I2C 6-DOF gravity & orientation sensing
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Auto-flip sensor restart with customizable duration
+            </li>
+          </ul>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://github.com/Sagor-Sharif/Digital_Sand_Watch" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              View Arduino Source Code
+            </a>
+            <button class="btn btn-secondary btn-sm" onclick="openCaseStudy('sand-hourglass')">
+              Read Deep Case Study
+            </button>
+          </div>
+        </div>
+
+        <div class="hourglass-device-mockup">
+          <div class="device-header-strip">
+            <span class="device-label">ARDUINO HOURGLASS v1.0</span>
+            <div class="device-status-leds">
+              <span class="tiny-led active-amber" title="Matrix 1 Power"></span>
+              <span class="tiny-led active-cyan" title="Matrix 2 Power"></span>
+            </div>
+          </div>
+
+          <div class="matrix-display-housing">
+            <canvas id="sandCanvas"></canvas>
+          </div>
+
+          <div class="sim-controls-panel">
+            <div class="sim-readout" id="sandCountdown">T-MINUS: 00:30 | ACTIVE SENSORS: OK</div>
+
+            <div class="sim-actions-row">
+              <button class="btn btn-amber btn-sm" id="flipSandBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                Flip Hourglass (180°)
+              </button>
+              <button class="btn btn-secondary btn-sm" id="resetSandBtn">Reset Sand</button>
+            </div>
+
+            <div class="sim-timer-presets">
+              <span style="font-size: 0.75rem; color: var(--text-subtle); margin-right: 0.25rem;">PRESET:</span>
+              <button class="preset-btn active" data-seconds="30">30s</button>
+              <button class="preset-btn" data-seconds="60">1m</button>
+              <button class="preset-btn" data-seconds="120">2m</button>
+              <button class="preset-btn" data-seconds="300">5m</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. FEATURED ENGINEERING PROJECTS & CASE STUDIES
+       ======================================================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Selected Works
+        </div>
+        <h2 class="section-title">Featured <span class="gradient-text">Engineering Projects</span></h2>
+        <p class="section-desc">
+          Bridging physical circuits, microcontrollers, and modern full-stack web software. Click on any project card to explore the full engineering case study and hardware architecture.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Builds (8)</button>
+        <button class="filter-btn" data-filter="robotics">Robotics & Hardware (4)</button>
+        <button class="filter-btn" data-filter="web">Web & Software (2)</button>
+        <button class="filter-btn" data-filter="assistive">Assistive & Systems (2)</button>
+      </div>
+
+      <!-- Projects Grid (Injected via app.js) -->
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. TECHNICAL TOOLKIT (SKILLS)
+       ======================================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          Technical Toolkit
+        </div>
+        <h2 class="section-title">Technologies I <span class="gradient-text">Build With</span></h2>
+        <p class="section-desc">
+          Proficiencies spanning embedded hardware microcontrollers, sensor protocols, competitive algorithm programming, and full-stack web development.
+        </p>
+      </div>
+
+      <div class="skills-categories-grid">
+        <!-- Category 1: Embedded & Hardware -->
+        <div class="skill-category-card cyan-theme">
+          <div class="skill-card-header">
+            <div class="skill-card-title-group">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              </div>
+              <h3 class="skill-card-title">Embedded & Hardware</h3>
+            </div>
+            <span class="badge badge-cyan">Hardware Core</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">Arduino UNO / Nano</span>
+            <span class="skill-chip">Embedded C/C++</span>
+            <span class="skill-chip">MPU6050 Accelerometer</span>
+            <span class="skill-chip">SIM800L GSM</span>
+            <span class="skill-chip">NEO-6M GPS</span>
+            <span class="skill-chip">L298N Motor Driver</span>
+            <span class="skill-chip">HC-05 Bluetooth</span>
+            <span class="skill-chip">RGB LED Matrices</span>
+            <span class="skill-chip">IR Reflectance Sensors</span>
+            <span class="skill-chip">I2C & UART Protocols</span>
+            <span class="skill-chip">PWM Motor Control</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Programming & Algorithms -->
+        <div class="skill-category-card amber-theme">
+          <div class="skill-card-header">
+            <div class="skill-card-title-group">
+              <div class="skill-card-icon amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="skill-card-title">Algorithms & Languages</h3>
+            </div>
+            <span class="badge badge-amber">Competitive CP</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">C / C++ (Advanced)</span>
+            <span class="skill-chip">Competitive Programming</span>
+            <span class="skill-chip">Data Structures & Graphs</span>
+            <span class="skill-chip">Algorithmic Optimization</span>
+            <span class="skill-chip">OOP & System Logic</span>
+            <span class="skill-chip">JavaScript (ES6+)</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">HackerRank C++ Gold Star</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Web & Full-Stack -->
+        <div class="skill-category-card emerald-theme">
+          <div class="skill-card-header">
+            <div class="skill-card-title-group">
+              <div class="skill-card-icon emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <h3 class="skill-card-title">Web & Full-Stack</h3>
+            </div>
+            <span class="badge badge-emerald">Modern Web</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">Next.js & React</span>
+            <span class="skill-chip">Supabase PostgreSQL</span>
+            <span class="skill-chip">Authentication & RLS</span>
+            <span class="skill-chip">SQL Database Schema</span>
+            <span class="skill-chip">HTML5 Canvas Interactivity</span>
+            <span class="skill-chip">Modern Vanilla CSS3</span>
+            <span class="skill-chip">RESTful APIs</span>
+            <span class="skill-chip">Responsive UI/UX</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Systems & Systems Tools -->
+        <div class="skill-category-card purple-theme">
+          <div class="skill-card-header">
+            <div class="skill-card-title-group">
+              <div class="skill-card-icon purple">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <h3 class="skill-card-title">Systems & Tools</h3>
+            </div>
+            <span class="badge badge-purple">Dev & Infrastructure</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">Ubuntu Linux</span>
+            <span class="skill-chip">Asterisk PBX VoIP</span>
+            <span class="skill-chip">SIP Telecommunication</span>
+            <span class="skill-chip">Local Intercom Systems</span>
+            <span class="skill-chip">Git & GitHub</span>
+            <span class="skill-chip">VS Code</span>
+            <span class="skill-chip">Arduino IDE</span>
+            <span class="skill-chip">Hardware Debugging</span>
+            <span class="skill-chip">Linux Shell / CLI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. COMPETITIVE PROGRAMMING & AWARDS
+       ======================================================================== -->
+  <section class="section" id="contests">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          Contests & Milestones
+        </div>
+        <h2 class="section-title">Competitive <span class="gradient-text">Programming</span></h2>
+        <p class="section-desc">
+          Turning algorithmic problem-solving pressure into structured, efficient, and reliable code solutions under competition conditions.
+        </p>
+      </div>
+
+      <div class="awards-grid">
+        <!-- Contest 1 -->
+        <div class="award-card featured-gold">
+          <div class="award-top-row">
+            <div class="award-medal medal-gold">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <span class="badge badge-amber">Champion · 1st Place</span>
+          </div>
+          <div class="award-content">
+            <h4>21st Intra-University Programming Contest</h4>
+            <div class="award-org">University of Global Village (UGV) · Team NooB_55</div>
+            <p class="award-desc">Secured first place in algorithmic problem solving under strict timed contest conditions using C++.</p>
+          </div>
+        </div>
+
+        <!-- Contest 2 -->
+        <div class="award-card">
+          <div class="award-top-row">
+            <div class="award-medal medal-gold">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="badge badge-amber">1st Position</span>
+          </div>
+          <div class="award-content">
+            <h4>19th Intra-University Programming Contest</h4>
+            <div class="award-org">University of Global Village (UGV)</div>
+            <p class="award-desc">Demonstrated consistent top-tier algorithm implementation, mathematical reasoning, and debugging efficiency.</p>
+          </div>
+        </div>
+
+        <!-- Contest 3 -->
+        <div class="award-card">
+          <div class="award-top-row">
+            <div class="award-medal medal-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34c-1.53-.44-2.73-1.63-3.17-3.16L2 8h20l-.83 3.5c-.44 1.53-1.64 2.72-3.17 3.16z"/></svg>
+            </div>
+            <span class="badge badge-cyan">National Contest</span>
+          </div>
+          <div class="award-content">
+            <h4>DUET IUPC Participant</h4>
+            <div class="award-org">Dhaka University of Engineering & Technology</div>
+            <p class="award-desc">Represented UGV at the national inter-university level, tackling complex graph theory, dynamic programming, and math problems.</p>
+          </div>
+        </div>
+
+        <!-- Contest 4 -->
+        <div class="award-card">
+          <div class="award-top-row">
+            <div class="award-medal medal-emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="badge badge-emerald">Proficiency Badge</span>
+          </div>
+          <div class="award-content">
+            <h4>HackerRank C++ Gold Star</h4>
+            <div class="award-org">HackerRank Platform Assessment</div>
+            <p class="award-desc">Earned highest star tier in C++ problem solving, demonstrating mastery of language internals, memory management, and OOP.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. TRAINING, LEADERSHIP & STEM WORKSHOPS
+       ======================================================================== -->
+  <section class="section" id="mentoring">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Community & Mentoring
+        </div>
+        <h2 class="section-title">Sharing Knowledge & <span class="gradient-text">STEM Mentorship</span></h2>
+        <p class="section-desc">
+          Believing that technology creates the greatest impact when shared, I actively mentor young learners in programming, robotics, and innovation.
+        </p>
+      </div>
+
+      <div class="mentoring-grid">
+        <!-- Workshop 1: NASA Mini Mars Rovers -->
+        <div class="mentoring-card">
+          <span class="mentoring-date">Freedom 250 · 2026</span>
+          <h3 class="mentoring-title">NASA Mini Mars Rovers & Innovation</h3>
+          <div class="mentoring-org">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Guest Trainer @ American Space Barishal
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Conducted a three-day intensive workshop for 50+ students (Class 7, 8, and HSC levels) exploring space exploration technology and building miniature Mars Rover prototypes.
+          </p>
+          <ul class="mentoring-highlights">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hands-on rover chassis and wheel mechanics</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Robotics communication and remote rover control concepts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Inspiring young students toward STEM and space careers</li>
+          </ul>
+        </div>
+
+        <!-- Workshop 2: Scratch Programming Basics -->
+        <div class="mentoring-card">
+          <span class="mentoring-date">July 29 & August 1, 2026</span>
+          <h3 class="mentoring-title">Scratch Programming Basics for Youth</h3>
+          <div class="mentoring-org">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Guest Trainer @ American Space Barishal
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Introduced young minds to foundational computer science concepts through interactive visual block programming, animation, and logic games.
+          </p>
+          <ul class="mentoring-highlights">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Fundamental algorithmic loops and condition branches</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Interactive story creation and block logic exercises</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Building problem-solving confidence in early learners</li>
+          </ul>
+        </div>
+
+        <!-- Leadership: Phitron Ambassador & Seminars -->
+        <div class="mentoring-card">
+          <span class="mentoring-date">Ongoing Leadership · 2026</span>
+          <h3 class="mentoring-title">Campus Ambassador & Community Speaker</h3>
+          <div class="mentoring-org">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Phitron Ambassador & WeMasterTrade Guest
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Representing UGV student body for computer programming education outreach and participating as a guest speaker at regional seminars.
+          </p>
+          <ul class="mentoring-highlights">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Represented student developers at 200+ attendee IFIT Seminar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Student outreach for programming curriculum opportunities</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Khulna trading community technology meetup participant</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. ABOUT ME & EDUCATION
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-box">
+        <div class="section-header" style="margin-bottom: 2.75rem;">
+          <div class="section-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Background & Education
+          </div>
+          <h2 class="section-title">Beyond the <span class="gradient-text">Screen</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-story">
+            <p>
+              I'm <strong>Sagor Sharif</strong>, a Computer Science & Engineering undergraduate at the University of Global Village (UGV) in Barishal, Bangladesh. My work lives where software and hardware collide.
+            </p>
+            <p>
+              While many software developers stay strictly in the browser, I'm drawn to projects where code breathes life into physical devices: an Arduino-powered safety device transmitting GPS coordinates via GSM, an autonomous rover tracking paths with IR sensors, or digital sand trickling through LED matrices according to gravity.
+            </p>
+            <p>
+              When I'm not breadboarding circuits or deploying full-stack web applications with Next.js and Supabase, I'm competing in programming contests or mentoring youngsters in STEM workshops. I believe engineering is at its best when it solves real human problems.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <span class="edu-year">2023 — 2026 (Undergraduate)</span>
+            <h3 class="edu-degree">BSc in Computer Science & Engineering</h3>
+            <div class="edu-institution">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              University of Global Village (UGV) · Barishal, Bangladesh
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Core coursework: Object-Oriented Programming (C++), Data Structures & Algorithms, Embedded Systems, Database Management Systems (DBMS), Computer Networks, Operating Systems.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="badge badge-cyan">Robotics Club</span>
+              <span class="badge badge-amber">Programming Contest Team</span>
+              <span class="badge badge-emerald">Campus Ambassador</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. CONTACT SECTION
+       ======================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Get In Touch
+        </div>
+        <h2 class="section-title">Let's Build Something <span class="gradient-text">Interesting</span></h2>
+        <p class="section-desc">
+          I'm open to technical collaborations, embedded hardware builds, software development opportunities, and STEM initiatives.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Channels -->
+        <div class="contact-info">
+          <div class="contact-channels">
+            <!-- Email Card with 1-click copy -->
+            <div class="channel-card">
+              <div class="channel-left">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="channel-title">Direct Email</div>
+                  <div class="channel-value">sagorsharif.cse@gmail.com</div>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-sm" id="copyEmailBtn" title="Copy email address">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Sagor-Sharif" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-left">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <div class="channel-title">GitHub Profile</div>
+                  <div class="channel-value">github.com/Sagor-Sharif</div>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sagor-sharif-9327b427b/" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-left">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <div class="channel-title">LinkedIn Profile</div>
+                  <div class="channel-value">sagor-sharif</div>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/sagorsharif.SH/" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-left">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </div>
+                <div>
+                  <div class="channel-title">Facebook</div>
+                  <div class="channel-value">sagorsharif.SH</div>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-panel">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="senderName" class="form-label">Your Name</label>
+              <input type="text" id="senderName" class="form-input" placeholder="e.g. John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="senderEmail" class="form-label">Email Address</label>
+              <input type="email" id="senderEmail" class="form-input" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="senderMessage" class="form-label">Message / Project Inquiry</label>
+              <textarea id="senderMessage" class="form-textarea" placeholder="Tell me about your project, idea, or collaboration..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <div class="brand-logo-wrap" style="width: 30px; height: 30px;">
+            <img src="assets/images/sagor-logo.jpg" alt="Sagor Sharif Logo" class="brand-logo-img">
+          </div>
+          <div>
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.1rem;">Sagor Sharif</h4>
+            <p style="font-size: 0.8rem; color: var(--text-subtle);">
+              Robotics Enthusiast · Competitive Programmer · Full-Stack Developer
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/Sagor-Sharif" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sagor-sharif-9327b427b/" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#hero" class="btn btn-secondary btn-sm" title="Back to Top">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+            Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       11. CASE STUDY MODAL DIALOG
+       ======================================================================== -->
+  <dialog class="case-study-dialog" id="caseStudyModal">
+    <div class="dialog-header">
+      <div class="dialog-title-wrap">
+        <span class="dialog-category" id="modalCategory">Category</span>
+        <h3 class="dialog-title" id="modalTitle">Project Title</h3>
+      </div>
+      <button class="dialog-close-btn" id="closeModalBtn" aria-label="Close Case Study Dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="modalBody">
+      <!-- Dynamically populated via app.js -->
+    </div>
+  </dialog>
+
+  <!-- ========================================================================
+       12. TOAST NOTIFICATION
+       ======================================================================== -->
+  <div class="toast" id="toastNotification" role="status" aria-live="polite">
+    <span class="toast-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    </span>
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/sparkle-intro.js"></script>
+  <script src="js/antigravity-bg.js"></script>
+  <script src="js/sand-simulation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
