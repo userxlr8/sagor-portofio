@@ -2039,6 +2039,166 @@
   display: flex;
 }
 
+@media (max-width: 640px) {
+  .antigravity-intro {
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+  .intro-topbar {
+    padding: 1rem;
+  }
+
+  .intro-brand {
+    font-size: 1rem;
+    gap: 0.55rem;
+  }
+
+  .btn-intro-contact {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .intro-center-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .intro-headline {
+    font-size: clamp(2.2rem, 12vw, 2.8rem);
+    gap: 0.2em;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-section {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-ctas,
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .avatar-floating-badge {
+    align-items: flex-start;
+    padding: 0.85rem 1rem;
+  }
+
+  .floating-badge-title,
+  .floating-badge-sub {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .simulation-card,
+  .about-box,
+  .contact-form-panel {
+    padding: 1.25rem;
+  }
+
+  .simulation-card > * {
+    min-width: 0;
+  }
+
+  .hourglass-device-mockup {
+    padding: 1rem;
+  }
+
+  .matrix-display-housing {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  #sandCanvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .projects-grid,
+  .mentoring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper > * {
+    min-width: 0;
+  }
+
+  .channel-value {
+    overflow-wrap: anywhere;
+  }
+
+  .project-card-header,
+  .project-body,
+  .skill-category-card,
+  .award-card,
+  .mentoring-card,
+  .education-card {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .award-top-row {
+    align-items: flex-start;
+  }
+
+  .award-top-row .badge {
+    white-space: normal;
+    text-align: right;
+  }
+
+  .dialog-header,
+  .dialog-body {
+    padding: 1.25rem;
+  }
+
+  .dialog-title {
+    font-size: 1.25rem;
+    padding-right: 0.5rem;
+  }
+
+  .dialog-specs-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .dialog-specs-table th,
+  .dialog-specs-table td {
+    min-width: 130px;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .dialog-features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .toast {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
+
 /* --------------------------------------------------------------------------
    11. FOOTER
    -------------------------------------------------------------------------- */
