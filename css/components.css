@@ -1561,14 +1561,14 @@
 }
 
 .award-card {
-  background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 1.85rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08);
+  box-shadow: var(--shadow-xs);
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -1595,6 +1595,24 @@
 
 .award-card:has(.medal-emerald)::before {
   background: linear-gradient(90deg, var(--emerald-primary), #34d399);
+}
+
+.award-card:has(.medal-gold) {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08);
+}
+
+.award-card:has(.medal-cyan) {
+  border-color: rgba(2, 132, 199, 0.28);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);
+}
+
+.award-card:has(.medal-emerald) {
+  border-color: rgba(16, 185, 129, 0.28);
+  background: linear-gradient(180deg, #ffffff 0%, #ecfdf5 100%);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
 }
 
 .award-card.featured-gold {
